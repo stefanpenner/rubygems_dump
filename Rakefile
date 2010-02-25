@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "rubygems_dump"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{dump a usable list of rubygems}
+    gem.description = %Q{dump a usable list }
     gem.email = "stefan.penner@gmail.com"
     gem.homepage = "http://github.com/stefanpenner/rubygems_dump"
     gem.authors = ["Stefan Penner"]

@@ -1,6 +1,3 @@
-require 'rubygems/command'
-require 'rubygems_dump'
-
 class Gem::Commands::DumpCommand < Gem::Command
 
   def initialize
@@ -8,12 +5,16 @@ class Gem::Commands::DumpCommand < Gem::Command
   end
 
   def execute
-    `gem list`.each do |gem|  
-      gem =~ /([\w-]+) \(([^)]+)\)/
-      name = $1
-      $2.split(",").each do |version| 
-        puts "gem install #{name} --version #{version} #{options}"
-      end
+    sudo = options[:args].delete('sudo') || ''
+    args = options[:args].map do |arg| 
+      "--#{arg}" 
+    end.join(' ')
+
+    gems =  Gem.source_index.gems.values
+    gems.each do |gem|  
+      say "#{sudo} gem install #{gem.name} --version #{gem.version} #{args}"
     end
   end
 end
+
+Gem::CommandManager.instance.register_command :dump

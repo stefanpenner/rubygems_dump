@@ -6,7 +6,7 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "rubygems_dump"
     gem.summary = %Q{dump a usable list of rubygems}
-    gem.description = %Q{dump a usable list }
+    gem.description = %Q{dump a list of gems in the form of gem install <name> --version <version> }
     gem.email = "stefan.penner@gmail.com"
     gem.homepage = "http://github.com/stefanpenner/rubygems_dump"
     gem.authors = ["Stefan Penner"]

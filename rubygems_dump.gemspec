@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "lib/rubygems/commands/dump_command.rb",
      "lib/rubygems_plugin.rb",
      "rubygems_dump.gemspec",
      "spec/rubygems_dump_spec.rb",
